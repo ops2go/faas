@@ -1,9 +1,9 @@
 provider:
   name: faas
-  gateway: http://127.0.0.1:8080
+  gateway: http://35.184.101.88
 
 functions:
   ansible-playbook:
     lang: dockerfile
-    handler: ./ansible-playbook
-    image: ansible-playbook
+    handler: ./ansinle-playbook
+    image: colemanword/ansible:faas
