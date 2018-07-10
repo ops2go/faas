@@ -21,12 +21,16 @@ RUN addgroup -S app && adduser -S -g app app
 
 RUN chown app /home/app
 
+RUN pip install awscli --upgrade --user
+
+RUN apk add --no-cache less groff
+
 WORKDIR /home/app
 
 USER app
 
-# Populate example here - i.e. "cat", "sha512sum" or "node index.js"
-ENV fprocess="cat"
+ENV PATH=$PATH:/root/.local/bin/
+ENV fprocess="xargs aws"        
 # Set to true to see request in function logs
 ENV write_debug="false"
 
