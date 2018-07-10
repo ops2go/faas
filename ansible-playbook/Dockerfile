@@ -1,5 +1,4 @@
-FROM alpine:3.7
-
+FROM python:2.7.14-alpine3.7
 # 1. Use any image as your base image, or "scratch"
 # 2. Add fwatchdog binary via https://github.com/openfaas/faas/releases/
 # 3. Then set fprocess to the process you want to invoke per request - i.e. "cat" or "my_binary"
@@ -22,12 +21,16 @@ RUN addgroup -S app && adduser -S -g app app
 
 RUN chown app /home/app
 
+RUN pip install ansible --upgrade --user
+
+RUN apk add --no-cache less groff
+
 WORKDIR /home/app
 
 USER app
 
-# Populate example here - i.e. "cat", "sha512sum" or "node index.js"
-ENV fprocess="cat"
+ENV PATH=$PATH:/root/.local/bin/
+ENV fprocess="xargs ansible-playbook"        
 # Set to true to see request in function logs
 ENV write_debug="false"
 
