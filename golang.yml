@@ -1,9 +1,0 @@
-provider:
-  name: faas
-  gateway: http://127.0.0.1:8080
-
-functions:
-  golang:
-    lang: go
-    handler: ./golang
-    image: golang

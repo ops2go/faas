@@ -1,9 +1,0 @@
-provider:
-  name: faas
-  gateway: 35.184.101.88
-
-functions:
-  certinfo:
-    lang: go
-    handler: ./certinfo
-    image: colemanword/certinfo
