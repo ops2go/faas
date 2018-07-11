@@ -12,7 +12,9 @@ RUN	apk add --no-cache \
 
 RUN wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip \
     && unzip terraform_0.11.7_linux_amd64.zip \
-    && mv terraform /usr/bin
+    && mv terraform /usr/bin ]
+    && rm terraform _0.11.7_linux_amd64.zip
+    
     
 RUN curl -sSL https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog > /usr/bin/fwatchdog \
     && chmod +x /usr/bin/fwatchdog 
