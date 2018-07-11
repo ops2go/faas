@@ -12,7 +12,7 @@ RUN	apk add --no-cache \
 
 RUN wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip \
     && unzip terraform_0.11.7_linux_amd64.zip \
-    && mv terraform /usr/bin ]
+    && mv terraform /usr/bin \
     && rm terraform _0.11.7_linux_amd64.zip
     
     
