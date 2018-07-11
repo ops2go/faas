@@ -10,17 +10,17 @@ RUN	apk add --no-cache \
 	unzip \
 	zip
 
-RUN wget https://releases.hashicorp.com/packer/1.2.4/packer_1.2.4_linux_amd64.zip \
-    && unzip packer_1.2.4_linux_amd64.zip \
-    && mv packer /usr/bin/packer \
-    && rm packer_1.2.4_linux_amd64.zip
+RUN wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip \
+    && unzip terraform_0.11.7_linux_amd64.zip \
+    && mv terraform /usr/bin/terraform \
+    && rm terraform_0.11.7_linux_amd64.zip
     
     
 RUN curl -sSL https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog > /usr/bin/fwatchdog \
     && chmod +x /usr/bin/fwatchdog 
 
 # Populate example here - i.e. "cat", "sha512sum" or "node index.js"
-ENV fprocess="xargs packer"
+ENV fprocess="xargs terraform"
 # Set to true to see request in function logs
 ENV write_debug="false"
 
