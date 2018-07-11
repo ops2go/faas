@@ -1,11 +1,11 @@
-FROM golang:alpine as builder
+FROM alpine:3.7
  
 RUN	apk add --no-cache \
 	bash \
 	ca-certificates \
 	git \
 	make \
-        curl \
+    curl \
 	wget \
 	unzip \
 	zip
@@ -20,7 +20,7 @@ RUN curl -sSL https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog
     && chmod +x /usr/bin/fwatchdog 
 
 # Populate example here - i.e. "cat", "sha512sum" or "node index.js"
-ENV fprocess="xargs terraform"
+ENV fprocess="xargs vault"
 # Set to true to see request in function logs
 ENV write_debug="false"
 
