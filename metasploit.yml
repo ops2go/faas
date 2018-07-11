@@ -6,4 +6,4 @@ functions:
   metasploit:
     lang: dockerfile
     handler: ./metasploit
-    image: metasploit
+    image: colemanword/metasploit:faas
