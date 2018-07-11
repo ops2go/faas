@@ -1,35 +1,33 @@
-FROM alpine:3.7
+FROM ubuntu:bionic
 
-# 1. Use any image as your base image, or "scratch"
-# 2. Add fwatchdog binary via https://github.com/openfaas/faas/releases/
-# 3. Then set fprocess to the process you want to invoke per request - i.e. "cat" or "my_binary"
+MAINTAINER Phocean <jc@phocean.net>
 
-#ADD https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog /usr/bin
-#RUN chmod +x /usr/bin/fwatchdog
+# PosgreSQL configuration
+COPY ./scripts/db.sql /tmp/
+COPY ./conf/database.yml /usr/share/metasploit-framework/config/
 
-RUN mkdir -p /home/app
+# Startup script
+COPY ./scripts/init.sh /usr/local/bin/init.sh
 
-RUN apk --no-cache add curl \
-    && echo "Pulling watchdog binary from Github." \
-    && curl -sSL https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog > /usr/bin/fwatchdog \
-    && chmod +x /usr/bin/fwatchdog \
-    && cp /usr/bin/fwatchdog /home/app \
-    && apk del curl --no-cache
-    
-# Add non root user
+# Installation
+RUN apt-get update \
+  && apt-get install -y \
+    curl postgresql postgresql-contrib postgresql-client \
+    apt-transport-https gnupg2\
+    nmap nasm\
+  && /etc/init.d/postgresql start && su postgres -c "psql -f /tmp/db.sql" \
+  && curl -fsSL https://apt.metasploit.com/metasploit-framework.gpg.key | apt-key add - \
+  && echo "deb https://apt.metasploit.com/ jessie main" >> /etc/apt/sources.list \
+  && apt-get update -qq \
+  && apt-get install -y metasploit-framework \
+  && apt-get remove -y apt-transport-https postgresql-contrib postgresql-client \
+  && rm -rf /var/lib/apt/lists/*
 
-RUN addgroup -S app && adduser -S -g app app
+# Configuration and sharing folders
+VOLUME /root/.msf4/
+VOLUME /tmp/data/
 
-RUN chown app /home/app
+# Locales for tmux
+ENV LANG C.UTF-8
 
-WORKDIR /home/app
-
-USER app
-
-# Populate example here - i.e. "cat", "sha512sum" or "node index.js"
-ENV fprocess="cat"
-# Set to true to see request in function logs
-ENV write_debug="false"
-
-HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
-CMD [ "fwatchdog" ]
+CMD "init.sh"
