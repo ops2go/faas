@@ -22,7 +22,7 @@ COPY . .
 
 RUN /usr/bin/python -m pip install pip -U && /usr/bin/python -m pip install -r tests/requirements.txt && python -m pip install -r requirements.txt
 
-ENV fprocess="ansible-playbook"
+ENV fprocess="xargs ansible-playbook"
 
 ENV write_debug="false"
 
