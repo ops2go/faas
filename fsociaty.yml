@@ -3,7 +3,7 @@ provider:
   gateway: http://127.0.0.1:8080
 
 functions:
-  metasploit:
+  fsociaty:
     lang: dockerfile
-    handler: ./metasploit
-    image: colemanword/metasploit:faas
+    handler: ./fsociaty
+    image: fsociaty
