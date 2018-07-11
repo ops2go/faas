@@ -6,4 +6,4 @@ functions:
   gcloud:
     lang: dockerfile
     handler: ./gcloud
-    image: gcloud
+    image: colemanword/gcloud:faas
