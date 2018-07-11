@@ -5,7 +5,7 @@ RUN	apk add --no-cache \
 	ca-certificates \
 	git \
 	make \
-    curl \
+        curl \
 	wget \
 	unzip \
 	zip
