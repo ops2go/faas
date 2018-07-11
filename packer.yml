@@ -3,7 +3,7 @@ provider:
   gateway: http://35.184.101.88
   
 functions:
-  packer:
+  vault:
     lang: dockerfile
-    handler: ./packer
-    image: colemanword/packer:faas
+    handler: ./vault
+    image: colemanword/vault:faas
