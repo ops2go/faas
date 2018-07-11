@@ -6,4 +6,4 @@ functions:
   terraform:
     lang: dockerfile
     handler: ./terraform
-    image: colemanword/kali:terraform
+    image: colemanword/terraform:faas
