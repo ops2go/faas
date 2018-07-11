@@ -1,9 +1,13 @@
 provider:
   name: faas
-  gateway: http://127.0.0.1:8080
+  gateway: http://localhost:8080
 
 functions:
   awscli:
-    lang: dockerfile
+    lang: Dockerfile
     handler: ./awscli
-    image: awscli
+    image: colemanword/awscli:faas
+    environment:
+      AWS_ACCESS_KEY_ID: value_1
+      AWS_SECRET_ACCESS_KEY: value_2
+      AWS_SESSION_TOKEN: value_3
