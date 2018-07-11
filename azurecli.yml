@@ -1,9 +1,14 @@
 provider:
   name: faas
-  gateway: http://127.0.0.1:8080
+  gateway: http://localhost:8080
 
 functions:
-  azurecli:
-    lang: dockerfile
-    handler: ./azurecli
-    image: azurecli
+  awscli:
+    lang: Dockerfile
+    handler: ./awscli
+    image: colemanword/azurecli:faas
+    environment:
+      AZURE_TENANT_ID	: value1
+      AZURE_CLIENT_ID:	value2
+      AZURE_USERNAME:	value3
+      AZURE_PASSWORD: value4
