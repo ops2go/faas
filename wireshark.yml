@@ -1,9 +1,10 @@
 provider:
+provider:
   name: faas
-  gateway: http://127.0.0.1:8080
-
+  gateway: http://35.184.101.88
+  
 functions:
   wireshark:
     lang: dockerfile
     handler: ./wireshark
-    image: wireshark
+    image: colemanword/wireshark:faas
