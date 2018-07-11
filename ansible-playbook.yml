@@ -5,5 +5,5 @@ provider:
 functions:
   ansible-playbook:
     lang: dockerfile
-    handler: ./ansinle-playbook
+    handler: ./ansible-playbook
     image: colemanword/ansible:faas
