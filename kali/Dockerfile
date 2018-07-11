@@ -33,7 +33,7 @@ RUN apt-get -y install curl \
     && curl -sSL https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog > /usr/bin/fwatchdog \
     && chmod +x /usr/bin/fwatchdog
     
-ENV fprocess="xargs bash"
+ENV fprocess="bash"
 
 ENV write_debug="false"
 
