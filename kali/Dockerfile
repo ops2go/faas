@@ -24,15 +24,14 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
     echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 ENV DEBIAN_FRONTEND noninteractive
+
 RUN set -x \
-    && apt-get install curl \
     && apt-get -yqq update \
     && apt-get -yqq dist-upgrade \
+    && curl -sSL https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog > /usr/bin/fwatchdog \
+    && chmod +x /usr/bin/fwatchdog \
     && apt-get clean
- 
-RUN curl -sSL https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog > /usr/bin/fwatchdog \
-    && chmod +x /usr/bin/fwatchdog 
-
+    
 ENV fprocess="xargs bash"
 
 ENV write_debug="false"
