@@ -1,7 +1,5 @@
 FROM golang:alpine as builder
  
-ENV PATH /usr/bin:/go/bin:/usr/local/go/bin:$PATH
-
 RUN	apk add --no-cache \
 	bash \
 	ca-certificates \
