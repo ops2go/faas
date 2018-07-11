@@ -1,33 +1,42 @@
-FROM alpine:3.7
+FROM golang:alpine as builder
+MAINTAINER Jessica Frazelle <jess@linux.com>
 
-# 1. Use any image as your base image, or "scratch"
-# 2. Add fwatchdog binary via https://github.com/openfaas/faas/releases/
-# 3. Then set fprocess to the process you want to invoke per request - i.e. "cat" or "my_binary"
+ENV PATH /go/bin:/usr/local/go/bin:$PATH
+ENV GOPATH /go
 
-#ADD https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog /usr/bin
-#RUN chmod +x /usr/bin/fwatchdog
+RUN	apk add --no-cache \
+	bash \
+	ca-certificates \
+	git \
+	make \
+    curl \
+	zip
 
-RUN mkdir -p /home/app
+ENV TERRAFORM_VERSION v0.11.7
 
-RUN apk --no-cache add curl \
-    && echo "Pulling watchdog binary from Github." \
-    && curl -sSL https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog > /usr/bin/fwatchdog \
-    && chmod +x /usr/bin/fwatchdog \
-    && cp /usr/bin/fwatchdog /home/app \
-    && apk del curl --no-cache
-    
-# Add non root user
+RUN go get github.com/hashicorp/terraform
 
-RUN addgroup -S app && adduser -S -g app app
+WORKDIR /go/src/github.com/hashicorp/terraform
 
-RUN chown app /home/app
+RUN git checkout "${TERRAFORM_VERSION}"
 
-WORKDIR /home/app
+# Install the vendor packages so stringer works.
+# See: https://github.com/golang/go/issues/10249
+RUN go install ./vendor/...
 
-USER app
+RUN XC_ARCH="amd64" XC_OS="linux" LD_FLAGS=" -extldflags -static" make bin \
+	&& mv bin/terraform /usr/bin/terraform
+
+FROM alpine:latest
+
+COPY --from=builder /usr/bin/terraform /usr/bin/terraform
+COPY --from=builder /etc/ssl/certs/ /etc/ssl/certs
+
+RUN curl -sSL https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog > /usr/bin/fwatchdog \
+    && chmod +x /usr/bin/fwatchdog 
 
 # Populate example here - i.e. "cat", "sha512sum" or "node index.js"
-ENV fprocess="cat"
+ENV fprocess="xargs terraform"
 # Set to true to see request in function logs
 ENV write_debug="false"
 
