@@ -11,9 +11,9 @@ RUN	apk add --no-cache \
 	zip
 
 RUN wget https://releases.hashicorp.com/vault/0.10.3/vault_0.10.3_linux_amd64.zip \
-    && unzip vault_0.10.3_linux_amd64.zi \
+    && unzip vault_0.10.3_linux_amd64.zip \
     && mv vault /usr/bin \
-    && rm vault_0.10.3_linux_amd64.zi
+    && rm vault_0.10.3_linux_amd64.zip
     
     
 RUN curl -sSL https://github.com/openfaas/faas/releases/download/0.8.0/fwatchdog > /usr/bin/fwatchdog \
