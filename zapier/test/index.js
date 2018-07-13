@@ -8,7 +8,13 @@ const appTester = zapier.createAppTester(App);
 describe('My App', () => {
 
   it('should load recipes', (done) => {
-    const bundle = {};
+    const triggerPointer = 'triggers.recipe';
+    const bundle = {
+      // NEW CODE
+      inputData: {
+        style: 'mediterranean'
+      }
+    };
 
     appTester(App.triggers.recipe.operation.perform, bundle)
       .then(results => {
