@@ -1,33 +1,37 @@
-const should = require('should');
+// Place this at the top of index.js
+const recipe = require('./triggers/recipe');
+// We can roll up all our behaviors in an App.
+const App = {
+  // This is just shorthand to reference the installed dependencies you have. Zapier will
+  // need to know these before we can upload
+  version: require('./package.json').version,
+  platformVersion: require('zapier-platform-core').version,
 
-const zapier = require('zapier-platform-core');
+  // beforeRequest & afterResponse are optional hooks into the provided HTTP client
+  beforeRequest: [
+  ],
 
-const App = require('../index');
-const appTester = zapier.createAppTester(App);
+  afterResponse: [
+  ],
 
-describe('My App', () => {
+  // If you want to define optional resources to simplify creation of triggers, searches, creates - do that here!
+  resources: {
+  },
 
-  it('should load recipes', (done) => {
-    const triggerPointer = 'triggers.recipe';
-    const bundle = {
-      // NEW CODE
-      inputData: {
-        style: 'mediterranean'
-      }
-    };
+  // If you want your trigger to show up, you better include it here!
+  triggers: {
+    [recipe.key]: recipe // new line of code
+  },
 
-    appTester(App.triggers.recipe.operation.perform, bundle)
-      .then(results => {
-        should(results.length).above(1);
+  // If you want your searches to show up, you better include it here!
+  searches: {
+  },
 
-        const firstResult = results[0];
-        console.log('test result: ', firstResult)
-        should(firstResult.name).eql('name 1');
-        should(firstResult.directions).eql('directions 1');
+  // If you want your creates to show up, you better include it here!
+  creates: {
+  }
+};
 
-        done();
-      })
-      .catch(done);
-  });
-
-});
+// Finally, export the app.
+module.exports = App;
+                             
