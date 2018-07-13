@@ -1,0 +1,118 @@
+2018-07-13 05:41:08,808 DEBUG    root            Loaded Command Group: [u'gcloud', u'init']
+2018-07-13 05:41:08,810 DEBUG    root            Running [gcloud.init] with arguments: [--console-only: "True"]
+2018-07-13 05:41:08,810 INFO     ___FILE_ONLY___ Welcome! This command will take you through the configuration of gcloud.
+
+
+2018-07-13 05:41:08,812 INFO     ___FILE_ONLY___ Settings from your current configuration [default] are:
+
+2018-07-13 05:41:08,836 INFO     ___FILE_ONLY___ component_manager:
+  disable_update_check: 'true'
+core:
+  disable_usage_reporting: 'true'
+metrics:
+  environment: github_docker_image
+
+2018-07-13 05:41:08,836 INFO     ___FILE_ONLY___ 
+
+2018-07-13 05:42:28,481 INFO     ___FILE_ONLY___ Your current configuration has been set to: [test]
+
+
+2018-07-13 05:42:28,481 INFO     ___FILE_ONLY___ You can skip diagnostics next time by using the following flag:
+
+2018-07-13 05:42:28,482 INFO     ___FILE_ONLY___   gcloud init --skip-diagnostics
+
+
+2018-07-13 05:42:28,482 INFO     ___FILE_ONLY___ Network diagnostic detects and fixes local network connection issues.
+
+2018-07-13 05:42:28,483 INFO     ___FILE_ONLY___ Checking network connection...
+2018-07-13 05:42:29,485 INFO     ___FILE_ONLY___ Reachability Check passed.
+
+2018-07-13 05:42:29,485 INFO     ___FILE_ONLY___ Network diagnostic (1/1 checks) passed.
+
+
+2018-07-13 05:42:35,100 DEBUG    root            Loaded Command Group: [u'gcloud', u'auth']
+2018-07-13 05:42:35,105 DEBUG    root            Loaded Command Group: [u'gcloud', u'auth', u'login']
+2018-07-13 05:42:35,107 INFO     root            Executing: [gcloud auth login --force --brief --no-launch-browser]
+2018-07-13 05:42:35,111 DEBUG    root            Running [gcloud.auth.login] with arguments: [--brief: "True", --force: "True", --no-launch-browser: "False"]
+2018-07-13 05:42:35,115 INFO     ___FILE_ONLY___ Go to the following link in your browser:
+
+    https://accounts.google.com/o/oauth2/auth?redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&prompt=select_account&response_type=code&client_id=32555940559.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&access_type=offline
+
+
+
+2018-07-13 05:43:18,557 INFO     oauth2client.client Successfully retrieved access token
+2018-07-13 05:43:18,597 INFO     root            Display format: "none"
+2018-07-13 05:43:18,600 DEBUG    root            SDK update checks are disabled.
+2018-07-13 05:43:18,601 INFO     ___FILE_ONLY___ You are logged in as: [colemanword.dev@gmail.com].
+
+
+2018-07-13 05:43:26,491 INFO     ___FILE_ONLY___ Your current project has been set to: [devops-209322].
+
+
+2018-07-13 05:43:26,492 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'project_info']
+2018-07-13 05:43:26,500 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'project-info', u'describe']
+2018-07-13 05:43:26,501 INFO     root            Executing: [gcloud compute project-info describe --quiet]
+2018-07-13 05:43:26,504 DEBUG    root            Running [gcloud.compute.project-info.describe] with arguments: [--no-user-output-enabled: "false", --quiet: "True", --verbosity: "none"]
+2018-07-13 05:43:26,777 INFO     root            Display disabled.
+2018-07-13 05:43:26,777 DEBUG    root            SDK update checks are disabled.
+2018-07-13 05:43:33,665 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'zones']
+2018-07-13 05:43:33,666 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'zones', u'list']
+2018-07-13 05:43:33,667 INFO     root            Executing: [gcloud compute zones list]
+2018-07-13 05:43:33,669 DEBUG    root            Running [gcloud.compute.zones.list] with arguments: [--no-user-output-enabled: "false", --verbosity: "none"]
+2018-07-13 05:43:33,677 INFO     root            Display disabled.
+2018-07-13 05:43:33,753 DEBUG    root            SDK update checks are disabled.
+2018-07-13 05:43:46,109 INFO     ___FILE_ONLY___ Your project default Compute Engine zone has been set to [us-central1-a].
+You can change it by running [gcloud config set compute/zone NAME].
+
+
+2018-07-13 05:43:46,110 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'regions']
+2018-07-13 05:43:46,112 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'regions', u'describe']
+2018-07-13 05:43:46,112 INFO     root            Executing: [gcloud compute regions describe https://www.googleapis.com/compute/v1/projects/devops-209322/regions/us-central1]
+2018-07-13 05:43:46,115 DEBUG    root            Running [gcloud.compute.regions.describe] with arguments: [--no-user-output-enabled: "false", --verbosity: "none", NAME: "https://www.googleapis.com/compute/v1/projects/devops-209322/regions/us-central1"]
+2018-07-13 05:43:46,300 INFO     root            Display disabled.
+2018-07-13 05:43:46,300 DEBUG    root            SDK update checks are disabled.
+2018-07-13 05:43:46,304 INFO     ___FILE_ONLY___ Your project default Compute Engine region has been set to [us-central1].
+You can change it by running [gcloud config set compute/region NAME].
+
+
+2018-07-13 05:43:46,305 DEBUG    root            Executing command: [u'/usr/lib/google-cloud-sdk/bin/gsutil', u'config', u'-n', u'-o', u'/root/.boto']
+2018-07-13 05:43:47,302 DEBUG    ___FILE_ONLY___ 
+2018-07-13 05:43:47,302 DEBUG    ___FILE_ONLY___ This command will create a boto config file at /root/.boto containing
+your credentials, based on your responses to the following questions.
+
+Boto config file "/root/.boto" created. If you need to use a proxy to
+access the Internet please see the instructions in that file.
+
+2018-07-13 05:43:47,303 INFO     ___FILE_ONLY___ Created a default .boto configuration file at [/root/.boto]. See this file and
+[https://cloud.google.com/storage/docs/gsutil/commands/config] for more
+information about configuring Google Cloud Storage.
+
+2018-07-13 05:43:47,303 INFO     ___FILE_ONLY___ Your Google Cloud SDK is configured and ready to use!
+
+
+2018-07-13 05:43:47,304 INFO     ___FILE_ONLY___ * Commands that require authentication will use colemanword.dev@gmail.com by default
+
+2018-07-13 05:43:47,304 INFO     ___FILE_ONLY___ * Commands will reference project `devops-209322` by default
+
+2018-07-13 05:43:47,304 INFO     ___FILE_ONLY___ * Compute Engine commands will use region `us-central1` by default
+
+2018-07-13 05:43:47,304 INFO     ___FILE_ONLY___ * Compute Engine commands will use zone `us-central1-a` by default
+
+
+2018-07-13 05:43:47,305 INFO     ___FILE_ONLY___ Run `gcloud help config` to learn how to change individual settings
+
+
+2018-07-13 05:43:47,305 INFO     ___FILE_ONLY___ This gcloud configuration is called [test]. You can create additional configurations if you work with multiple accounts and/or projects.
+
+2018-07-13 05:43:47,305 INFO     ___FILE_ONLY___ Run `gcloud topic configurations` to learn more.
+
+
+2018-07-13 05:43:47,305 INFO     ___FILE_ONLY___ Some things to try next:
+
+
+2018-07-13 05:43:47,305 INFO     ___FILE_ONLY___ * Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
+
+2018-07-13 05:43:47,305 INFO     ___FILE_ONLY___ * Run `gcloud topic -h` to learn about advanced features of the SDK like arg files and output formatting
+
+2018-07-13 05:43:47,307 INFO     root            Display format: "default"
+2018-07-13 05:43:47,307 DEBUG    root            SDK update checks are disabled.

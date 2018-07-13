@@ -1,0 +1,7 @@
+2018-06-25 17:52:12,503 DEBUG    root            Loaded Command Group: [u'gcloud', u'config']
+2018-06-25 17:52:12,506 DEBUG    root            Loaded Command Group: [u'gcloud', u'config', u'set']
+2018-06-25 17:52:12,509 DEBUG    root            Running [gcloud.config.set] with arguments: [SECTION/PROPERTY: "core/disable_usage_reporting", VALUE: "true"]
+2018-06-25 17:52:12,510 INFO     ___FILE_ONLY___ Updated property [core/disable_usage_reporting].
+
+2018-06-25 17:52:12,512 INFO     root            Display format: "default"
+2018-06-25 17:52:12,529 DEBUG    root            SDK update checks are disabled.

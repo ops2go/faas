@@ -1,0 +1,9 @@
+[core]
+disable_usage_reporting = true
+
+[component_manager]
+disable_update_check = true
+
+[metrics]
+environment = github_docker_image
+

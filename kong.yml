@@ -6,4 +6,4 @@ functions:
   kong:
     lang: dockerfile
     handler: ./kong
-    image: kong
+    image: colemanword/kong:faas

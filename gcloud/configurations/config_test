@@ -1,0 +1,8 @@
+[core]
+account = colemanword.dev@gmail.com
+project = devops-209322
+
+[compute]
+zone = us-central1-a
+region = us-central1
+

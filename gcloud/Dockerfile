@@ -25,6 +25,7 @@ RUN set -x \
 
 ADD https://github.com/openfaas/faas/releases/download/0.7.0/fwatchdog /usr/bin
 RUN chmod +x /usr/bin/fwatchdog
+COPY . /root/.config/gcloud/
 ENV fprocess="xargs gcloud"
 HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
 CMD ["fwatchdog"]

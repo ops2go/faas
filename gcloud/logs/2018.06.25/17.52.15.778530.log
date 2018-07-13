@@ -1,0 +1,66 @@
+2018-06-25 17:52:15,782 DEBUG    root            Running [gcloud] with arguments: [-v: "None"]
+2018-06-25 17:52:15,783 DEBUG    root            Loaded Command Group: [u'gcloud', u'version']
+2018-06-25 17:52:15,793 DEBUG    root            Running [gcloud.version] with arguments: []
+2018-06-25 17:52:15,825 INFO     root            Display format: "flattened[no-pad,separator=" "]"
+2018-06-25 17:52:15,826 INFO     ___FILE_ONLY___ Google Cloud SDK
+2018-06-25 17:52:15,826 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,826 INFO     ___FILE_ONLY___ 206.0.0
+
+2018-06-25 17:52:15,826 INFO     ___FILE_ONLY___ alpha
+2018-06-25 17:52:15,826 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,827 INFO     ___FILE_ONLY___ 2018.06.18
+
+2018-06-25 17:52:15,827 INFO     ___FILE_ONLY___ app-engine-go
+2018-06-25 17:52:15,827 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,827 INFO     ___FILE_ONLY___ 
+
+2018-06-25 17:52:15,827 INFO     ___FILE_ONLY___ app-engine-java
+2018-06-25 17:52:15,827 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,827 INFO     ___FILE_ONLY___ 1.9.64
+
+2018-06-25 17:52:15,827 INFO     ___FILE_ONLY___ app-engine-python
+2018-06-25 17:52:15,827 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___ 1.9.70
+
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___ app-engine-python-extras
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___ 1.9.70
+
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___ beta
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___ 2018.06.18
+
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___ bigtable
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___ 
+
+2018-06-25 17:52:15,828 INFO     ___FILE_ONLY___ bq
+2018-06-25 17:52:15,829 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,829 INFO     ___FILE_ONLY___ 2.0.34
+
+2018-06-25 17:52:15,829 INFO     ___FILE_ONLY___ cbt
+2018-06-25 17:52:15,829 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,829 INFO     ___FILE_ONLY___ 
+
+2018-06-25 17:52:15,829 INFO     ___FILE_ONLY___ cloud-datastore-emulator
+2018-06-25 17:52:15,829 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,829 INFO     ___FILE_ONLY___ 2.0.0
+
+2018-06-25 17:52:15,829 INFO     ___FILE_ONLY___ core
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___ 2018.06.18
+
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___ datalab
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___ 20180503
+
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___ gsutil
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___ 4.32
+
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___ pubsub-emulator
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___  
+2018-06-25 17:52:15,830 INFO     ___FILE_ONLY___ 2018.06.18
+
+2018-06-25 17:52:15,832 DEBUG    root            SDK update checks are disabled.
+2018-06-25 17:52:15,843 DEBUG    root            SDK update checks are disabled.
