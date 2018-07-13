@@ -72,7 +72,7 @@ RUN npm install -g zapier-platform-cli \
   && cd example \
   && npm install 
 
-ENV fprocess="zapier"
+ENV fprocess="xargs zapier"
 ENV write_debug="false"
 HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
 CMD [ "fwatchdog" ]
